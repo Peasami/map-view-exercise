@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import Map from './screens/Map';
+import Constants from 'expo-constants';
 
 export default function App() {
   return (
@@ -16,5 +17,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: Platform.OS === 'android' ? Constants.statusBarHeight : 0,
   },
 });
